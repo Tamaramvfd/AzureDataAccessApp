@@ -16,5 +16,16 @@ namespace AzureDataAccessWindowsFormsUI
         {
             InitializeComponent();
         }
+
+        private void getGamesButton_Click(object sender, EventArgs e)
+        {
+            //gamesListBox.Items = DataAcces.GetGames();
+            List<GameModel> games = new List<GameModel>();
+            games = DataAcces.GetGames();
+            foreach (GameModel game in games)
+            {
+                gamesList.Items.Add(game.ToString());
+            }
+        }
     }
 }
